@@ -23,7 +23,7 @@ jobs:
         env:
           CI: "1"
           HOME: /root
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: visual-baselines
           path: apps/playground/tests/__screenshots__
