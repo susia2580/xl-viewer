@@ -1,0 +1,206 @@
+.xv-root {
+  --xv-tab-bg: #f3f3f3;
+  --xv-tab-color: #444;
+  --xv-tab-active-bg: #fff;
+  --xv-tab-active-color: #217346;
+  --xv-tab-border: #d0d0d0;
+  --xv-note-bg: #ffffe1;
+  --xv-note-border: #767676;
+  --xv-placeholder-bg: #f2f2f2;
+  --xv-placeholder-color: #767676;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  background: #fff;
+  color: #000;
+}
+
+.xv-scroll {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  outline: none;
+}
+
+.xv-scroll:focus-visible {
+  box-shadow: inset 0 0 0 2px #217346;
+}
+
+/* Canvas and overlay share one grid cell so they don't add to the scroll size. */
+.xv-content {
+  display: grid;
+  grid-template: 1fr / 1fr;
+}
+
+.xv-grid,
+.xv-panes {
+  grid-area: 1 / 1;
+  position: sticky;
+  top: 0;
+  left: 0;
+  align-self: start;
+  justify-self: start;
+}
+
+.xv-grid {
+  display: block;
+}
+
+.xv-panes {
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.xv-pane {
+  position: absolute;
+  overflow: hidden;
+}
+
+.xv-layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  will-change: transform;
+}
+
+.xv-image,
+.xv-shape,
+.xv-chart,
+.xv-note {
+  position: absolute;
+  box-sizing: border-box;
+}
+
+.xv-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+}
+
+.xv-shape {
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.xv-shape-text {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  color: #000;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+.xv-chart {
+  pointer-events: auto;
+  background: #fff;
+}
+
+.xv-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--xv-placeholder-bg);
+  color: var(--xv-placeholder-color);
+  border: 1px solid #d9d9d9;
+  font:
+    12px/1.4 system-ui,
+    sans-serif;
+  text-align: center;
+  overflow: hidden;
+}
+
+.xv-note {
+  z-index: 1;
+  padding: 3px 5px;
+  background: var(--xv-note-bg);
+  border: 1px solid var(--xv-note-border);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+  color: #000;
+  font-family: Tahoma, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  line-height: 1.25;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  overflow: hidden;
+}
+
+.xv-note-reply + .xv-note-reply {
+  margin-top: 4px;
+  padding-top: 4px;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.xv-tabs {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 1px;
+  overflow-x: auto;
+  background: var(--xv-tab-border);
+  border-top: 1px solid var(--xv-tab-border);
+  scrollbar-width: thin;
+}
+
+.xv-tab {
+  flex: 0 0 auto;
+  padding: 4px 14px;
+  border: 0;
+  background: var(--xv-tab-bg);
+  color: var(--xv-tab-color);
+  font:
+    13px/1.4 system-ui,
+    "Segoe UI",
+    "Apple SD Gothic Neo",
+    "Malgun Gothic",
+    sans-serif;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.xv-tab:hover {
+  background: var(--xv-tab-active-bg);
+}
+
+.xv-tab-active {
+  background: var(--xv-tab-active-bg);
+  color: var(--xv-tab-active-color);
+  font-weight: 600;
+  box-shadow: inset 0 -2px 0 var(--xv-tab-active-color);
+}
+
+.xv-tab:focus-visible {
+  outline: 2px solid var(--xv-tab-active-color);
+  outline-offset: -2px;
+}
+
+.xv-guide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background: var(--xv-guide-color, #217346);
+}
+
+.xv-guide-col {
+  width: 1px;
+  height: 100%;
+}
+
+.xv-guide-row {
+  width: 100%;
+  height: 1px;
+}
+
+.xv-guide[hidden] {
+  display: none;
+}

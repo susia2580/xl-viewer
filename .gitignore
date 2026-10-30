@@ -1,0 +1,62 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build output
+dist/
+*.tsbuildinfo
+coverage/
+
+# Playwright
+test-results/
+playwright-report/
+**/__screenshots__/actual/
+**/__screenshots__/diff/
+
+# Python (fixture generators)
+.venv/
+__pycache__/
+*.pyc
+
+# Spreadsheets: block everything by default.
+# Real business files must never reach git history.
+# Only generated fixtures (fake data, reproducible from scripts) are allowed.
+*.xlsx
+*.xlsm
+*.xls
+*.xlsb
+*.ods
+*.numbers
+!fixtures/generated/**/*.xlsx
+# sales-report.xlsx contains Korean text and is kept out of git (user, 2026-10-30).
+# It stays usable locally; its tests and visual cases skip when it is missing.
+
+# Local reference material (Excel screenshots of private files, etc.)
+local/
+fixtures/reference/sales-report.*
+
+# Env and secrets
+.env
+.env.*
+!.env.example
+*.pem
+.npmrc
+
+# OS / editor
+.DS_Store
+.idea/
+*.swp
+
+# Tool state
+.bkit/
+.claude/settings.local.json
+
+# Local screenshots
+.shots/
+
+# Generated perf files are large; recreate with `pnpm fixtures -- --large`
+fixtures/generated/perf/
+
+# Consumer bundler checks
+.consumer-tmp/
+scripts/.size-tmp/

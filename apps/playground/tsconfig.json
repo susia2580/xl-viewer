@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "types": ["vite/client", "node"],
+    "paths": {
+      "@xl-viewer/core": ["../../packages/core/src/index.ts"],
+      "@xl-viewer/core/locales/*": ["../../packages/core/src/locales/*.ts"],
+      "@xl-viewer/vue": ["../../packages/vue/src/index.ts"]
+    },
+    "allowImportingTsExtensions": true,
+    "noEmit": true
+  },
+  "include": ["src", "tests", "vite.config.ts", "../../packages/core/src/worker/virtual.d.ts"]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "@xl-viewer/vue",
+  "version": "0.0.0",
+  "description": "Vue 3 component for the xl-viewer xlsx viewer",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "vite build && tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@xl-viewer/core": "workspace:*"
+  },
+  "peerDependencies": {
+    "vue": "^3.3.0"
+  },
+  "devDependencies": {
+    "typescript": "~6.0.3",
+    "vite": "^8.3.5",
+    "vue": "^3.5.44"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/susia2580/xl-viewer.git",
+    "directory": "packages/vue"
+  },
+  "homepage": "https://susia2580.github.io/xl-viewer/",
+  "bugs": "https://github.com/susia2580/xl-viewer/issues",
+  "keywords": [
+    "xlsx",
+    "spreadsheet",
+    "viewer",
+    "vue"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

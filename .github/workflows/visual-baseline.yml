@@ -1,0 +1,29 @@
+name: Visual baselines
+
+# Produces baseline screenshots in the pinned environment. A maintainer compares
+# them with Excel side by side before committing (docs/01-design.md 12.3).
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  baselines:
+    runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.64.1-noble
+      options: --ipc=host
+    steps:
+      - uses: actions/checkout@v4
+      - run: apt-get update && apt-get install -y --no-install-recommends fonts-noto-cjk fonts-liberation2 fonts-crosextra-carlito fonts-crosextra-caladea
+      - run: npm install -g corepack@latest && corepack enable
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec playwright test --update-snapshots
+        env:
+          CI: "1"
+          HOME: /root
+      - uses: actions/upload-artifact@v4
+        with:
+          name: visual-baselines
+          path: apps/playground/tests/__screenshots__
