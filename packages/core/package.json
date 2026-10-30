@@ -1,6 +1,6 @@
 {
   "name": "@xl-viewer/core",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Lightweight read-only xlsx viewer for the browser",
   "license": "MIT",
   "type": "module",
