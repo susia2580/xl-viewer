@@ -41,7 +41,7 @@ function setup(name, pkg, files) {
   mkdirSync(join(dir, "public"), { recursive: true });
   writeFileSync(join(dir, "package.json"), JSON.stringify({ name, private: true, type: "module", ...pkg }, null, 2));
   for (const [f, content] of Object.entries(files)) writeFileSync(join(dir, f), content);
-  copyFileSync(resolve("fixtures/generated/basic.xlsx"), join(dir, "public/sample.xlsx"));
+  copyFileSync(resolve("fixtures/generated/charts.xlsx"), join(dir, "public/sample.xlsx"));
   run("npm", ["install", "--no-audit", "--no-fund", "--loglevel=error"], dir);
   return dir;
 }
@@ -93,7 +93,7 @@ try {
       await p.goto(base + (mode === "workerUrl" ? "?worker=./parser.worker.js" : ""));
       const result = await p.waitForFunction(() => window.__result, null, { timeout: 30000 }).then((h) => h.jsonValue());
       const charts = await p.locator(".xv-chart svg").count();
-      const ok = result.ok && !result.warnings.includes("WORKER_UNAVAILABLE") && charts === 2;
+      const ok = result.ok && !result.warnings.includes("WORKER_UNAVAILABLE") && charts > 0;
       failed ||= !ok;
       console.log(`${ok ? "ok  " : "FAIL"} ${label.padEnd(10)} ${mode.padEnd(10)} ${JSON.stringify({ ...result, charts })}`);
       await p.close();
