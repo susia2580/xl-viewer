@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "types": ["vite/client", "node"],
+    "paths": {
+      "@xl-viewer/core": ["../core/src/index.ts"]
+    }
+  },
+  "include": ["src", "test", "vite.config.ts", "../core/src/worker/virtual.d.ts"]
+}

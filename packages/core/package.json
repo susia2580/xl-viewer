@@ -1,0 +1,61 @@
+{
+  "name": "@xl-viewer/core",
+  "version": "0.0.0",
+  "description": "Lightweight read-only xlsx viewer for the browser",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./styles.css": "./dist/xl-viewer.css",
+    "./worker": "./dist/parser.worker.js",
+    "./locales/en": {
+      "types": "./dist/locales/en.d.ts",
+      "import": "./dist/locales/en.js"
+    },
+    "./locales/ko": {
+      "types": "./dist/locales/ko.d.ts",
+      "import": "./dist/locales/ko.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "scripts": {
+    "build": "vite build && tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "echarts": "^6.1.0",
+    "fflate": "^0.8.3",
+    "numfmt": "^4.1.1"
+  },
+  "devDependencies": {
+    "typescript": "~6.0.3",
+    "vite": "^8.3.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/susia2580/xl-viewer.git",
+    "directory": "packages/core"
+  },
+  "homepage": "https://susia2580.github.io/xl-viewer/",
+  "bugs": "https://github.com/susia2580/xl-viewer/issues",
+  "keywords": [
+    "xlsx",
+    "spreadsheet",
+    "viewer",
+    "ooxml",
+    "excel-viewer"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

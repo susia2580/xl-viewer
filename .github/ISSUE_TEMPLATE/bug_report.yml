@@ -1,0 +1,43 @@
+name: Bug report
+description: A file opens wrongly, looks different from Excel, or fails to open
+labels: [bug]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind of problem
+      options:
+        - Looks different from Excel (rendering-diff)
+        - File does not open (parser)
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened and what you expected
+      description: Screenshots of xl-viewer and of Excel side by side help a lot.
+    validations:
+      required: true
+  - type: input
+    id: generator
+    attributes:
+      label: App that created the file
+      placeholder: Excel 365 for Windows, Google Sheets export, openpyxl 3.1 ...
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and version
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: xl-viewer version
+    validations:
+      required: true
+  - type: textarea
+    id: file
+    attributes:
+      label: Sample file
+      description: Attach a file that reproduces the problem. Remove personal or business data first. We will ask before using it as a test fixture.

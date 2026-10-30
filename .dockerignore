@@ -1,0 +1,15 @@
+**/node_modules
+**/dist
+.git
+.venv
+.shots
+.consumer-tmp
+test-results
+playwright-report
+fixtures/generated/perf
+apps/playground/tests/__screenshots__
+.env*
+local
+.claude
+.bkit
+docs/*.xlsx

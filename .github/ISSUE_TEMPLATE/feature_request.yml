@@ -1,0 +1,17 @@
+name: Feature request
+description: Suggest something xl-viewer should display
+labels: [feature]
+body:
+  - type: markdown
+    attributes:
+      value: xl-viewer is a read-only, lightweight viewer. Editing and formula evaluation are out of scope.
+  - type: textarea
+    id: what
+    attributes:
+      label: What should be displayed
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it matters

@@ -1,0 +1,14 @@
+dist
+coverage
+pnpm-lock.yaml
+.consumer-tmp
+.shots
+.venv
+fixtures
+test-results
+playwright-report
+**/__screenshots__
+CHANGELOG.md
+docs
+CLAUDE.md
+.changeset/*.md
