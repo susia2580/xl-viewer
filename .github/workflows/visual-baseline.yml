@@ -15,7 +15,7 @@ jobs:
       image: mcr.microsoft.com/playwright:v1.64.1-noble
       options: --ipc=host
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - run: apt-get update && apt-get install -y --no-install-recommends fonts-noto-cjk fonts-liberation2 fonts-crosextra-carlito fonts-crosextra-caladea
       - run: npm install -g corepack@latest && corepack enable
       - run: pnpm install --frozen-lockfile
