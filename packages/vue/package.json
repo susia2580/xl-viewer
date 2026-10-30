@@ -1,6 +1,6 @@
 {
   "name": "@xl-viewer/vue",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Vue 3 component for the xl-viewer xlsx viewer",
   "license": "MIT",
   "type": "module",
