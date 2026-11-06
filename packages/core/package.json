@@ -34,7 +34,7 @@
   "dependencies": {
     "echarts": "^6.1.0",
     "fflate": "^0.8.3",
-    "numfmt": "^4.1.1"
+    "numfmt": "^4.1.2"
   },
   "devDependencies": {
     "typescript": "~6.0.3",

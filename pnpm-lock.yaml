@@ -252,8 +252,8 @@ importers:
         specifier: ^0.8.3
         version: 0.8.3
       numfmt:
-        specifier: ^4.1.1
-        version: 4.1.1
+        specifier: ^4.1.2
+        version: 4.1.2
     devDependencies:
       typescript:
         specifier: ~6.0.3
@@ -1192,8 +1192,8 @@ packages:
   nth-check@2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
 
-  numfmt@4.1.1:
-    resolution: {integrity: sha512-12MJtolvN20WANpEm1LjEZrUgnjnBxg9Rp5FpXZZO06NInd7zc5cu8DOjVkrYfeWswNBOmDeD0MuJEYkVf5kzQ==}
+  numfmt@4.1.2:
+    resolution: {integrity: sha512-3K7lWeRKIcxAuqvfQYt/2NGkSAz7zJ5JgGqL0mTEC4AyHYo+IVGWcWSNhZspPjCQvI1g5zBjEif1qiwsKdncBw==}
 
   obug@3.0.0:
     resolution: {integrity: sha512-5vvB5+W7ePv+p3uqxi+RcW1XAzLW0/hxt3/4X4Lc4qHudzOhmBiBwOY6DRob4WnanAEGvNcLjF+KNOufrUoEQw==}
@@ -2436,7 +2436,7 @@ snapshots:
     dependencies:
       boolbase: 1.0.0
 
-  numfmt@4.1.1: {}
+  numfmt@4.1.2: {}
 
   obug@3.0.0: {}
 
